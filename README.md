@@ -1,9 +1,10 @@
-# TRABAJO FINAL DE MÁSTER: Lista de la compra automática de fruta mediante la detección de objetos en imágenes con Mask R-CNN
+# Lista de la compra automática de fruta mediante la detección de objetos en imágenes con Mask R-CNN
 
+TRABAJO FINAL DE MÁSTER
 Autor: Paula León Gil-Gibernau
 Tutor: Jerónimo Hernández González
 Profesor: Jordi Casas Roma
-
+Universitat Oberta de Catalunya (UOC). Máster Universitario en Ciencia de Datos (Data Science)
 
 ## Resumen
 El objetivo de este estudio es realizar de forma automática una lista de la compra de fruta.
