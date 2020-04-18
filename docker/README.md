@@ -1,4 +1,4 @@
-# Dockerfile to use the TensorFlow Object Detection API
+# Dockerfile 
 
 This Dockerfile will install everything needed to use TensorFlow Object Detection API and run all the python scripts which contain this project.
 
