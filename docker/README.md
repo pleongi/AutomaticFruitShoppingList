@@ -16,7 +16,7 @@ Tensorflow Object Detection API depends on the following libraries:
 * contextlib2
 * cocoapi
 
-You also need to follow the instructions explained in the following link:
+<br />You also need to follow the instructions explained in the following link:
 https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md
 * COCO API installation
 * Protobuf Compilation
@@ -29,5 +29,5 @@ From this directory, build the image as follows (this takes a while):
 
 ## Running the container
 * docker run --rm -it --privileged -v C:\Users\Paula\Desktop\AutomaticFruitShoppingList:/AutomaticFruitShoppingList -p 8888:8888 detect-tf
-As I want to share my git project folder, to modify it inside and outside the docker I have specified  -v C:\Users\Paula\Desktop\AutomaticFruitShoppingList:/AutomaticFruitShoppingList
-To open jupyter notebook, open in your browser http://localhost:8888/: password is root.
+<br />As I want to share my git project folder, to modify it inside and outside the docker I have specified  -v C:\Users\Paula\Desktop\AutomaticFruitShoppingList:/AutomaticFruitShoppingList
+<br />To open jupyter notebook, open in your browser http://localhost:8888/: password is root.
