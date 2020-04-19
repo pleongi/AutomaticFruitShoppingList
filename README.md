@@ -19,7 +19,10 @@ The aim of this project is to generate an automatic fruit shopping list. To do s
 ## **Tabla de contenidos:**
 
 ### **Código:**
-* **Codigo/get_imagenet_data.ipynb**: python notebook que contiene el código para bajar imagenes de ImageNet de las 6 clases de frutas.
+* **Codigo/get_imagenet_data.ipynb**: python notebook que contiene el código para bajar imágenes de ImageNet de las 6 clases de frutas.
+* **Codigo/TensorFlow/workspace/label_map.pbtxt**: TensorFlow requiere un mapa de clases, que mapea cada clase de fruta con un valor integer. Este mapa se usa tanto para el proceso de entrenamiento como para el de detección. 
+* **Codigo/TensorFlow/workspace/mask_rcnn_inception_resnet_v2_atrous_coco.config**: fichero que contiene la configuración para volver a entrenar el modelo mask_rcnn_inception_resnet_v2_atrous_coco ya entrenado.
+* **Codigo/TensorFlow/workspace/mask_rcnn_resnet101_atrous_coco.config**: fichero que contiene la configuración para volver a entrenar el modelo mask_rcnn_resnet101_atrous_coco ya entrenado.
 
 ### **Documentación:**
 * **Documentacion/TFM_pleongi.pdf**: PDF que contiene la memoria del TFM.
@@ -27,4 +30,5 @@ The aim of this project is to generate an automatic fruit shopping list. To do s
 
 ### **docker:**
 * **docker/Dockerfile.pdf**: Dockerfile que contiene la instalación de todo lo necesario para utilizar la TensorFlow Object Detection API y para ejecutar todos los scripts de python que tiene este proyecto. 
-* **docker/README.md**: contine la explicación de como crear y ejecutar la imagen docker.
+* **docker/README.md**: contiene la explicación de cómo crear y ejecutar la imagen docker.
+
