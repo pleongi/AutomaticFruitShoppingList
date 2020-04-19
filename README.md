@@ -18,6 +18,13 @@ The aim of this project is to generate an automatic fruit shopping list. To do s
 
 ## **Tabla de contenidos:**
 
+### **Código:**
+* **Codigo/get_imagenet_data.ipynb**: python notebook que contiene el código para bajar imagenes de ImageNet de las 6 clases de frutas.
+
 ### **Documentación:**
 * **Documentacion/TFM_pleongi.pdf**: PDF que contiene la memoria del TFM.
 * **Documentacion/TFM_pleongi.zip**: zip que contiene los archivos usados para generar el PDF con Latex.
+
+### **docker:**
+* **docker/Dockerfile.pdf**: Dockerfile que contiene la instalación de todo lo necesario para utilizar la TensorFlow Object Detection API y para ejecutar todos los scripts de python que tiene este proyecto. 
+* **docker/README.md**: contine la explicación de como crear y ejecutar la imagen docker.

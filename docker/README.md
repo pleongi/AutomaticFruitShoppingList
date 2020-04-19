@@ -1,4 +1,4 @@
-# Dockerfile to use the TensorFlow Object Detection API
+# Dockerfile 
 
 This Dockerfile will install everything needed to use TensorFlow Object Detection API and run all the python scripts which contain this project.
 
@@ -29,5 +29,6 @@ From this directory, build the image as follows (this takes a while):
 
 ## Running the container
 * docker run --rm -it --privileged -v C:\Users\Paula\Desktop\AutomaticFruitShoppingList:/AutomaticFruitShoppingList -p 8888:8888 detect-tf
+
 As I want to share my git project folder, to modify it inside and outside the docker I have specified  -v C:\Users\Paula\Desktop\AutomaticFruitShoppingList:/AutomaticFruitShoppingList
-To open jupyter notebook, open in your browser http://localhost:8888/: password is root.
+<br />To open jupyter notebook, open in your browser http://localhost:8888/: password is root.
