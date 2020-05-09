@@ -20,19 +20,7 @@ FROM tensorflow/tensorflow:nightly-devel-py3
 RUN git clone --branch r1.13.0 --depth 1 https://github.com/tensorflow/models.git && \
     mv models /tensorflow/models
 
-
-
 ARG DEBIAN_FRONTEND=noninteractive
-
-
-# Install pycocoapi
-#RUN git clone --depth 1 https://github.com/cocodataset/cocoapi.git && \
-#    cd cocoapi/PythonAPI && \
-#    make -j8 && \
-#    cp -r pycocotools /tensorflow/models/research && \
-#    cd ../../ && \
-#    rm -rf cocoapi
-
 
 RUN python3 -m pip --no-cache-dir install --upgrade \
     pip \
@@ -46,7 +34,7 @@ RUN pip install Cython && \
     pip install matplotlib
 
 # Install the Tensorflow Object Detection API from here
-#RUN pip install -U --pre tensorflow=="2.*"
+#RUN pip install -U --pre tensorflow=="2.*" until 1.9 works and it is already there
 
 # Get protoc 3.0.0, rather than the old version already in the container
 RUN curl -OL "https://github.com/google/protobuf/releases/download/v3.0.0/protoc-3.0.0-linux-x86_64.zip" && \
@@ -59,7 +47,6 @@ RUN curl -OL "https://github.com/google/protobuf/releases/download/v3.0.0/protoc
 RUN cd /tensorflow/models/research && \
     protoc object_detection/protos/*.proto --python_out=.
 
-#RUN cd / && tf_upgrade_v2 --intree /tensorflow/models/research/object_detection/ --outtree /tensorflow/models/research/object_detection/
 # Set the PYTHONPATH to finish installing the API
 ENV PYTHONPATH $PYTHONPATH:/tensorflow/models/research:/tensorflow/models/research/slim
 
@@ -69,9 +56,14 @@ RUN pip install /tensorflow/models/research/
 #ENV cd /tensorflow/models/research && python setup.py build
 #ENV cd /tensorflow/models/research && python setup.py install
 
-# Install wget (to make life easier below) and editors (to allow people to edit
-# the files inside the container)
-#RUN apt-get install -y wget vim emacs nano
+
+# Install pycocoapi
+RUN git clone --depth 1 https://github.com/cocodataset/cocoapi.git && \
+    cd cocoapi/PythonAPI && \
+    make -j8 && \
+    cp -r pycocotools /tensorflow/models/research && \
+    cd ../../ && \
+    rm -rf cocoapi
 
 WORKDIR /tensorflow
 
