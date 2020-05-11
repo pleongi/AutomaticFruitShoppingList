@@ -213,7 +213,7 @@ def create_tf_record(image_dir_path,
       if idx % 100 == 0:
         logging.info('On image %d of %d', idx, len(images_filename))
       image_path = os.path.join(image_dir_path, filename + '.jpg')
-      mask_path = os.path.join(masks_dir_path, filename + '.png')
+      mask_path = os.path.join(masks_dir_path, filename + '_color_mask.png')
       xml_path = os.path.join(xmls_dir_path, filename + '.xml')
       try:
         tf_example = image_to_tf_data(image_path,
@@ -238,20 +238,18 @@ def main(_):
   label_map_dict = label_map_dict_temp.copy()
   logging.info("label map:" + str(label_map_dict))
   logging.info('Reading from dataset.')
-  for label_folder in os.listdir(images_dir_path_and_sub_folder):
-    label_folder_path = os.path.join(images_dir_path_and_sub_folder, str(label_folder))
-    images_filename = os.listdir(label_folder_path) 
-    for filename in images_filename:
-      if filename[-3:] !='jpg':
-        del images_filename[images_filename.index(filename)]
-    for filename in images_filename:  
-      images_filename[images_filename.index(filename)] = filename[0:-4]
+  images_filename = os.listdir(images_dir_path_and_sub_folder) 
+  for filename in images_filename:
+    if filename[-3:] !='jpg':
+      del images_filename[images_filename.index(filename)]
+  for filename in images_filename:  
+    images_filename[images_filename.index(filename)] = filename[0:-4]
 
-    create_tf_record(label_folder_path,
-                    annotations_dir_path,
-                    tfrecord_dir_path,
-                    label_map_dict,
-                    images_filename )
+  create_tf_record(images_dir_path_and_sub_folder,
+                  annotations_dir_path,
+                  tfrecord_dir_path,
+                  label_map_dict,
+                  images_filename )
 
 if __name__ == '__main__':
   tf.compat.v1.app.run()
