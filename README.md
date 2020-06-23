@@ -29,6 +29,9 @@ The aim of this project is to generate an automatic fruit shopping list. To do s
 * **Codigo/TensorFlow/workspace/mask_rcnn_resnet101_atrous_coco.config**: fichero que contiene la configuración para volver a entrenar el modelo mask_rcnn_resnet101_atrous_coco ya entrenado. Basado en el obtenido de https://github.com/tensorflow/models/tree/master/research/object_detection/samples/configs
 * **Codigo/TensorFlow/workspace/test-00000-of-00001**: fichero Tensorflow Record del conjunto de imágenes de entrenamiento, generado con el script create_mask_rcnn_tf_record.py.
 * **Codigo/TensorFlow/workspace/train-00000-of-00001**: fichero Tensorflow Record del conjunto de imágenes de evaluación, generado con el script create_mask_rcnn_tf_record.py.
+* **Codigo/TensorFlow/workspace/trained_interface_graphs/mask_rcnn_inception_resnet_v2_atrous/frozen_inference_graph.pb**: fichero generado que contiene el grafo de inferencia entrenado del modelo mask_rcnn_inception_resnet_v2_atrous.
+* **Codigo/cantidad.csv**: fichero que contiene la cantidad detectada por el modelo de cada tipo de fruta de las imágenes de producción.
+* **Codigo/cantidad_real.csv**: fichero que contiene la cantidad real de cada tipo de fruta de las imágenes de producción.
 
 ### **Documentación:**
 * **Documentacion/TFM_pleongi.pdf**: PDF que contiene la memoria del TFM.
